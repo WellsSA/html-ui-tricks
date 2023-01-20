@@ -15,6 +15,6 @@ body {
   grid-template-rows: repeat(var(--rows), 1fr);
 }
 
-.tile {
+/* .tile {
   outline: 1px solid white;
-}
+} */
