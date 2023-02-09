@@ -15,12 +15,12 @@ const handleOnClick = (index, columns, rows) => {
   clickCounter = clickCounter + 1;
 
   const tileColor = colors[clickCounter % (colors.length - 1)];
-  console.log({ anime });
+
   anime({
     targets: '.tile',
     easing: 'easeOutExpo',
     backgroundColor: tileColor,
-    delay: anime.stagger(50, {
+    delay: anime.stagger(TILE_SIZE, {
       grid: [columns, rows],
       from: index,
     }),
