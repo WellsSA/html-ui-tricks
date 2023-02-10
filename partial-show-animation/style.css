@@ -12,17 +12,27 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #ccc;
+  background: #1b1b1b;
 }
 
 #root #panel-left {
-  -webkit-animation: switch-left 2s linear infinite alternate;
-          animation: switch-left 2s linear infinite alternate;
+  -webkit-animation: switch-right 2s linear forwards;
+          animation: switch-right 2s linear forwards;
 }
 
 #root #panel-right {
-  -webkit-animation: switch-right 2s linear infinite alternate;
-          animation: switch-right 2s linear infinite alternate;
+  -webkit-animation: switch-left 2s linear forwards;
+          animation: switch-left 2s linear forwards;
+}
+
+#root.play-animation #panel-left {
+  -webkit-animation: switch-left 2s linear forwards;
+          animation: switch-left 2s linear forwards;
+}
+
+#root.play-animation #panel-right {
+  -webkit-animation: switch-right 2s linear forwards;
+          animation: switch-right 2s linear forwards;
 }
 
 #root .panel {
@@ -33,6 +43,10 @@ html, body {
   height: 100%;
   overflow: hidden;
   position: absolute;
+  -webkit-transition: -webkit-clip-path 2s linear;
+  transition: -webkit-clip-path 2s linear;
+  transition: clip-path 2s linear;
+  transition: clip-path 2s linear, -webkit-clip-path 2s linear;
 }
 
 #root .panel > section {
@@ -54,10 +68,14 @@ html, body {
 
 #root .panel-left {
   background: blue;
+  -webkit-clip-path: inset(0 0 0 50%);
+          clip-path: inset(0 0 0 50%);
 }
 
 #root .panel-right {
   background: red;
+  -webkit-clip-path: inset(0 50% 0 0);
+          clip-path: inset(0 50% 0 0);
 }
 
 @-webkit-keyframes switch-right {
@@ -68,16 +86,6 @@ html, body {
   100% {
     -webkit-clip-path: inset(0 0 0 50%);
             clip-path: inset(0 0 0 50%);
-  }
-  @keyframes switch-left {
-    0% {
-      -webkit-clip-path: inset(0 0 0 50%);
-              clip-path: inset(0 0 0 50%);
-    }
-    100% {
-      -webkit-clip-path: inset(0 50% 0 0);
-              clip-path: inset(0 50% 0 0);
-    }
   }
 }
 
@@ -90,25 +98,27 @@ html, body {
     -webkit-clip-path: inset(0 0 0 50%);
             clip-path: inset(0 0 0 50%);
   }
-  @-webkit-keyframes switch-left {
-    0% {
-      -webkit-clip-path: inset(0 0 0 50%);
-              clip-path: inset(0 0 0 50%);
-    }
-    100% {
-      -webkit-clip-path: inset(0 50% 0 0);
-              clip-path: inset(0 50% 0 0);
-    }
+}
+
+@-webkit-keyframes switch-left {
+  0% {
+    -webkit-clip-path: inset(0 0 0 50%);
+            clip-path: inset(0 0 0 50%);
   }
-  @keyframes switch-left {
-    0% {
-      -webkit-clip-path: inset(0 0 0 50%);
-              clip-path: inset(0 0 0 50%);
-    }
-    100% {
-      -webkit-clip-path: inset(0 50% 0 0);
-              clip-path: inset(0 50% 0 0);
-    }
+  100% {
+    -webkit-clip-path: inset(0 50% 0 0);
+            clip-path: inset(0 50% 0 0);
+  }
+}
+
+@keyframes switch-left {
+  0% {
+    -webkit-clip-path: inset(0 0 0 50%);
+            clip-path: inset(0 0 0 50%);
+  }
+  100% {
+    -webkit-clip-path: inset(0 50% 0 0);
+            clip-path: inset(0 50% 0 0);
   }
 }
 /*# sourceMappingURL=style.css.map */

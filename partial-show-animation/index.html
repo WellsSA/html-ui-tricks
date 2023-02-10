@@ -11,20 +11,26 @@
     <div id="root">
       <div id="panel-left" class="panel panel-left">
         <section>
-          <h1>Left blue content</h1>
+          <h1>BANANA</h1>
         </section>
         <section>
-          <h1>Right blue content</h1>
+          <h1>PIE</h1>
         </section>
       </div>
       <div id="panel-right" class="panel panel-right">
         <section>
-          <h1>Left red content</h1>
+          <h1>TERRACOTA</h1>
         </section>
         <section>
-          <h1>Right red content</h1>
+          <h1>TERRACOTA</h1>
         </section>
       </div>
     </div>
   </body>
+  <script>
+    const root = document.getElementById('root');
+    root.addEventListener('click', e => {
+      root.classList.toggle('play-animation');
+    });
+  </script>
 </html>

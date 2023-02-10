@@ -10,13 +10,20 @@ html, body
   position: relative
   width: 100%
   height: 100%
-  background: #ccc
+  background: #1b1b1b
 
   #panel-left
-    animation: switch-left 2s linear infinite alternate
+    animation: switch-right 2s linear forwards
 
   #panel-right
-    animation: switch-right 2s linear infinite alternate
+    animation: switch-left 2s linear forwards
+
+  &.play-animation
+    #panel-left
+      animation: switch-left 2s linear forwards
+
+    #panel-right
+      animation: switch-right 2s linear forwards
 
   .panel
     display: flex
@@ -24,6 +31,7 @@ html, body
     height: 100%
     overflow: hidden
     position: absolute
+    transition: clip-path 2s linear
 
     > section
       flex: 1
@@ -35,9 +43,11 @@ html, body
 
     &-left
       background: blue
+      clip-path: inset(0 0 0 50%)
 
     &-right
       background: red
+      clip-path: inset(0 50% 0 0)
 
 @keyframes switch-right
   0%
@@ -45,9 +55,9 @@ html, body
   100%
     clip-path: inset(0 0 0 50%)
 
-  @keyframes switch-left
-    0%
-      clip-path: inset(0 0 0 50%)
+@keyframes switch-left
+  0%
+    clip-path: inset(0 0 0 50%)
 
-    100%
-      clip-path: inset(0 50% 0 0)
+  100%
+    clip-path: inset(0 50% 0 0)
