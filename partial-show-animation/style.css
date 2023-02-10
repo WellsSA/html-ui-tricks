@@ -16,23 +16,23 @@ html, body {
 }
 
 #root #panel-left {
-  -webkit-animation: switch-right 2s linear forwards;
-          animation: switch-right 2s linear forwards;
+  -webkit-animation: switch-right 2s forwards;
+          animation: switch-right 2s forwards;
 }
 
 #root #panel-right {
-  -webkit-animation: switch-left 2s linear forwards;
-          animation: switch-left 2s linear forwards;
+  -webkit-animation: switch-left 2s forwards;
+          animation: switch-left 2s forwards;
 }
 
 #root.play-animation #panel-left {
-  -webkit-animation: switch-left 2s linear forwards;
-          animation: switch-left 2s linear forwards;
+  -webkit-animation: switch-left 2s forwards;
+          animation: switch-left 2s forwards;
 }
 
 #root.play-animation #panel-right {
-  -webkit-animation: switch-right 2s linear forwards;
-          animation: switch-right 2s linear forwards;
+  -webkit-animation: switch-right 2s forwards;
+          animation: switch-right 2s forwards;
 }
 
 #root .panel {
@@ -43,10 +43,10 @@ html, body {
   height: 100%;
   overflow: hidden;
   position: absolute;
-  -webkit-transition: -webkit-clip-path 2s linear;
-  transition: -webkit-clip-path 2s linear;
-  transition: clip-path 2s linear;
-  transition: clip-path 2s linear, -webkit-clip-path 2s linear;
+  -webkit-transition: -webkit-clip-path 2s;
+  transition: -webkit-clip-path 2s;
+  transition: clip-path 2s;
+  transition: clip-path 2s, -webkit-clip-path 2s;
 }
 
 #root .panel > section {

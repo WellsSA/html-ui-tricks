@@ -13,17 +13,17 @@ html, body
   background: #1b1b1b
 
   #panel-left
-    animation: switch-right 2s linear forwards
+    animation: switch-right 2s forwards
 
   #panel-right
-    animation: switch-left 2s linear forwards
+    animation: switch-left 2s forwards
 
   &.play-animation
     #panel-left
-      animation: switch-left 2s linear forwards
+      animation: switch-left 2s forwards
 
     #panel-right
-      animation: switch-right 2s linear forwards
+      animation: switch-right 2s forwards
 
   .panel
     display: flex
@@ -31,7 +31,7 @@ html, body
     height: 100%
     overflow: hidden
     position: absolute
-    transition: clip-path 2s linear
+    transition: clip-path 2s
 
     > section
       flex: 1
