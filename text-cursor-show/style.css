@@ -24,8 +24,22 @@ html, body {
 }
 
 #root h1.text-show-animation-item {
+  position: relative;
   font-size: 14vw;
   color: #1b1b1b;
   -webkit-text-stroke: 0.3vw #00fbff;
+}
+
+#root h1.text-show-animation-item::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  color: #00fbff;
+  -webkit-text-stroke: 0vw #1b1b1b;
+  border-right: 2px solid #00fbff;
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */

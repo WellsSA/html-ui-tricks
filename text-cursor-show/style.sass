@@ -1,3 +1,5 @@
+$background-color: #1b1b1b
+$primary-color: #00fbff
 
 html, body
   width: 100%
@@ -7,19 +9,28 @@ html, body
   font-family: 'Roboto', sans-serif
   box-sizing: border-box
 
-:root
-  --background-color: #1b1b1b
-  --primary-color: #00fbff
-
 #root
   display: flex
   justify-content: center
   align-items: center
   width: 100%
   height: 100%
-  background: var(--background-color)
+  background: $background-color
 
   h1.text-show-animation-item
+    position: relative
     font-size: 14vw
-    color: var(--background-color)
-    -webkit-text-stroke: 0.3vw var(--primary-color)
+    color: $background-color
+    -webkit-text-stroke: 0.3vw $primary-color
+
+    &::before
+      content: attr(data-text)
+      position: absolute
+      top: 0
+      left: 0
+      width: 20%
+      height: 100%
+      color: $primary-color
+      -webkit-text-stroke: 0vw $background-color
+      border-right: 2px solid $primary-color
+      overflow: hidden
