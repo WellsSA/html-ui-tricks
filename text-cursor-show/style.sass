@@ -34,3 +34,11 @@ html, body
       -webkit-text-stroke: 0vw $background-color
       border-right: 2px solid $primary-color
       overflow: hidden
+      animation: text-show-animation 4s linear infinite
+
+@keyframes text-show-animation
+  0%, 10%, 100%
+    width: 0%
+
+  70%, 90%
+    width: 100%
