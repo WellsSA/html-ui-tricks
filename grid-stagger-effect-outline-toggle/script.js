@@ -1,25 +1,15 @@
 const TILE_SIZE = 50; // 50px X 50px
 const wrapper = document.getElementById('tiles');
 
-const colors = [
-  'rgba(229, 57,53)',
-  'rgba(253, 216, 53)',
-  'rgba(244, 81,30)',
-  'rgba(76, 175, 80)',
-  'rgba(33, 150, 243)',
-  'rgba(156, 39, 176)',
-];
-
+let toggled = false;
 let clickCounter = 0;
 const handleOnClick = (index, columns, rows) => {
-  clickCounter = clickCounter + 1;
-
-  const tileColor = colors[clickCounter % (colors.length - 1)];
+  toggled = !toggled;
 
   anime({
     targets: '.tile',
     easing: 'easeOutExpo',
-    backgroundColor: tileColor,
+    opacity: toggled ? 0 : 1,
     delay: anime.stagger(TILE_SIZE, {
       grid: [columns, rows],
       from: index,
